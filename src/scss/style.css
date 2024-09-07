@@ -1,0 +1,62 @@
+body {
+  box-sizing: border-box;
+  background-color: hsl(253, 92%, 20%);
+}
+
+.digital-clock, .greeting {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.greeting {
+  margin: 10px auto 0;
+}
+
+.stopwatches {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  margin-top: 100px;
+}
+
+@media screen and (max-width: 600px) {
+  .stopwatches {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+  }
+  .stopwatches__2nd, .stopwatches__3rd {
+    margin-top: 20px;
+  }
+}
+@font-face {
+  src: url(../assets/circular-std-2.ttf);
+  font-family: "Circular Std 2";
+}
+.digital-clock {
+  font-size: 2.5rem;
+  font-family: monospace, Arial, "Times New Roman";
+}
+
+.greeting {
+  font-size: 2rem;
+}
+
+.greeting, .start-button, .stop-button, .reset-button {
+  font-family: "Circular Std 2";
+}
+
+.greeting, .digital-clock, .display {
+  color: hsl(0, 0%, 100%);
+}
+
+@media screen and (max-width: 600px) {
+  .digital-clock {
+    font-size: 1.7rem;
+  }
+  .greeting {
+    font-size: 1.25rem;
+  }
+}/*# sourceMappingURL=style.css.map */

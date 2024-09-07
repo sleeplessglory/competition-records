@@ -1,0 +1,25 @@
+@font-face {
+    src: url(../assets/circular-std-2.ttf);
+    font-family: 'Circular Std 2';
+}
+.digital-clock {
+    font-size: 2.5rem;
+    font-family: monospace, Arial, 'Times New Roman';
+}
+.greeting {
+    font-size: 2rem;
+}
+.greeting, .start-button, .stop-button, .reset-button {
+    font-family: 'Circular Std 2';
+}
+.greeting, .digital-clock, .display {
+    color: hsl(0, 0%, 100%);
+}
+@media screen and (max-width: 600px) {
+    .digital-clock {
+        font-size: 1.7rem;
+    }
+    .greeting {
+        font-size: 1.25rem;
+    }
+}
