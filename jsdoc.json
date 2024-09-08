@@ -7,7 +7,7 @@
     },
     "opts": {
         "template": "node_modules/docdash",
-        "destination": "./documentation"
+        "destination": "./documentation/developer"
     },
     "docdash": {
 	"sort": true,
