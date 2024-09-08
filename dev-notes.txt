@@ -1,0 +1,34 @@
+1. In order to check the app within mobile devices add to "vite.config.js" within 
+"export default defineConfig({})" these lines:
+server: {
+    host: true  
+}
+and then head to http://IPv4:PortNumber
+
+2. In order to create developer documentations create "jsdoc.json" file (you can modify the lines):
+{
+    "plugins": ["plugins/markdown"],
+    "source": {
+        "include": ["src"],
+        "exclude": ["node_modules", "cypress"],
+        "includePattern": ".+\\.js(doc|x)?$"
+    },
+    "opts": {
+        "template": "node_modules/docdash",
+        "destination": "./documentation"
+    },
+    "docdash": {
+	"sort": true,
+	"search": true,
+	"collapse": false
+    }
+}
+Then make sure that JSDoc is installed: npm install -g jsdoc
+Choose any theme for your doc (docdash, minami, etc.) and install: npm install docdash --save-dev
+Set your "jsdoc.json" file accordingly (depending on the theme)
+Run: jsdoc -c jsdoc.json
+
+3. In order to test your app with Cypress follow:
+npm run dev (the server has to be up)
+"npm install cypress --save-dev" to install Cypress locally as a dev dependency
+"npx cypress open" to eXecute Cypress window

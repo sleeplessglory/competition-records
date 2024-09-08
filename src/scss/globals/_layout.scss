@@ -1,22 +1,22 @@
 body {
     box-sizing: border-box;
     background-color: hsl(253, 92%, 20%);
+    margin: 0;
 }
 .digital-clock, .greeting {
+    margin: 20px auto 0;
     display: flex;
     flex-direction: row;
     justify-content: center;
 }
-.greeting {
-    margin: 10px auto 0;
-}
+
 .stopwatches {
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
-    margin-top: 100px;
+    margin-top: 50px;
 }
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 800px) {
     .stopwatches {
         display: flex;
         flex-direction: column;

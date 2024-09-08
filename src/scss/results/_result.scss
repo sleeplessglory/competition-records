@@ -1,0 +1,11 @@
+.results {
+    &__activity, &__1st, &__2nd, &__3rd {
+        text-align: center;
+        margin-top: 7px;
+    }
+}
+.results input {
+    width: 215px;
+    height: 20px;
+    padding: 5px;
+}

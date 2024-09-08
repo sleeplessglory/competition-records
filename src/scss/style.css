@@ -1,26 +1,24 @@
 body {
   box-sizing: border-box;
   background-color: hsl(253, 92%, 20%);
+  margin: 0;
 }
 
 .digital-clock, .greeting {
+  margin: 20px auto 0;
   display: flex;
   flex-direction: row;
   justify-content: center;
-}
-
-.greeting {
-  margin: 10px auto 0;
 }
 
 .stopwatches {
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
-  margin-top: 100px;
+  margin-top: 50px;
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 800px) {
   .stopwatches {
     display: flex;
     flex-direction: column;
@@ -35,6 +33,27 @@ body {
   src: url(../assets/circular-std-2.ttf);
   font-family: "Circular Std 2";
 }
+.results__activity {
+  font-weight: bold;
+  font-family: "Circular Std 2";
+  font-size: 1.2rem;
+  color: hsl(253, 92%, 20%);
+}
+.results__1st, .results__2nd, .results__3rd {
+  font-weight: bold;
+  font-size: 1.2rem;
+  font-family: monospace;
+}
+.results__1st {
+  color: hsl(51, 100%, 40%);
+}
+.results__2nd {
+  color: hsl(0, 0%, 50%);
+}
+.results__3rd {
+  color: brown;
+}
+
 .digital-clock {
   font-size: 2.5rem;
   font-family: monospace, Arial, "Times New Roman";
@@ -52,11 +71,119 @@ body {
   color: hsl(0, 0%, 100%);
 }
 
-@media screen and (max-width: 600px) {
+.display {
+  font-family: monospace, "Circular Std 2", Arial;
+  font-weight: bold;
+  font-size: 1.5rem;
+  color: hsl(253, 92%, 20%);
+}
+
+@media screen and (max-width: 800px) {
   .digital-clock {
     font-size: 1.7rem;
   }
   .greeting {
     font-size: 1.25rem;
   }
+}
+.stopwatches__1st, .stopwatches__2nd, .stopwatches__3rd {
+  padding: 25px;
+  border-radius: 7px;
+}
+.stopwatches__1st:hover, .stopwatches__2nd:hover, .stopwatches__3rd:hover {
+  animation-name: glow;
+  animation-iteration-count: infinite;
+  animation-duration: 7s;
+  animation-timing-function: ease;
+}
+.stopwatches__1st {
+  background-color: hsl(0, 99%, 35%);
+}
+.stopwatches__2nd {
+  background-color: hsl(58, 100%, 40%);
+}
+.stopwatches__3rd {
+  background-color: hsl(114, 100%, 24%);
+}
+
+@keyframes glow {
+  50% {
+    box-shadow: 0px 0px 50px hsl(0, 0%, 100%);
+  }
+}
+.stopwatch-elements {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: none;
+  border-radius: 1rem;
+  background-color: white;
+  padding: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.display {
+  margin-bottom: 0.7rem;
+}
+
+.controls button {
+  margin-inline: 0.5rem;
+  color: white;
+  border: none;
+  border-radius: 3px;
+  height: 1.5rem;
+  width: 3rem;
+  cursor: pointer;
+  transition: background-color 0.5s ease;
+}
+
+.start-button {
+  background-color: hsl(120, 80%, 26%);
+}
+
+.start-button:hover {
+  background-color: hsl(120, 80%, 41%);
+}
+
+.stop-button {
+  background-color: hsl(0, 80%, 26%);
+}
+
+.stop-button:hover {
+  background-color: hsl(0, 80%, 41%);
+}
+
+.reset-button {
+  background-color: hsl(230, 80%, 26%);
+}
+
+.reset-button:hover {
+  background-color: hsl(230, 80%, 41%);
+}
+
+.results__activity, .results__1st, .results__2nd, .results__3rd {
+  text-align: center;
+  margin-top: 7px;
+}
+
+.results input {
+  width: 215px;
+  height: 20px;
+  padding: 5px;
+}
+
+.reset-hint {
+  animation-name: reset-glow;
+  animation-iteration-count: infinite;
+  animation-duration: 7s;
+  animation-timing-function: ease;
+}
+
+@keyframes reset-glow {
+  70% {
+    box-shadow: 0px 0px 20px hsl(0, 100%, 50%);
+  }
+}
+.start-stop-hide {
+  visibility: hidden;
 }/*# sourceMappingURL=style.css.map */

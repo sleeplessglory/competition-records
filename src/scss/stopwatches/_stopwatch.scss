@@ -1,0 +1,66 @@
+.stopwatches {
+    &__1st, &__2nd, &__3rd {
+        padding: 25px;
+        border-radius: 7px;
+    }
+    &__1st:hover, &__2nd:hover, &__3rd:hover {
+        animation-name: glow;
+        animation-iteration-count: infinite;
+        animation-duration: 7s;
+        animation-timing-function: ease;
+    }
+    &__1st {
+        background-color: hsl(0, 99%, 35%);
+    }
+    &__2nd {
+        background-color: hsl(58, 100%, 40%);
+    }
+    &__3rd {
+        background-color: hsl(114, 100%, 24%);
+    }
+}
+@keyframes glow {
+    50%{box-shadow: 0px 0px 50px hsl(0, 0%, 100%);}
+}
+.stopwatch-elements {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: none;
+    border-radius: 1rem;
+    background-color: white;
+    padding: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+.display {
+    margin-bottom: 0.7rem;
+}
+.controls button {
+    margin-inline: 0.5rem;
+    color: white;
+    border: none;
+    border-radius: 3px;
+    height: 1.5rem;
+    width: 3rem;
+    
+    cursor: pointer;
+    transition: background-color 0.5s ease;
+}
+.start-button {
+    background-color: hsl(120, 80%, 26%);
+}
+.start-button:hover {
+    background-color: hsl(120, 80%, 41%); 
+}
+.stop-button {
+    background-color: hsl(0, 80%, 26%);
+}
+.stop-button:hover {
+    background-color: hsl(0, 80%, 41%);
+}
+.reset-button {
+    background-color: hsl(230, 80%, 26%);
+}
+.reset-button:hover {
+    background-color: hsl(230, 80%, 41%);
+}

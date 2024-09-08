@@ -1,11 +1,27 @@
 import React, {useState, useEffect, useRef} from 'react';
-
+import ResultList from './ResultList.jsx';
+/**
+ * The function contains the main logic of how every stopwatch works
+ * using useState, useEffect and useRef React hooks
+ * @returns The stopwatch elements and the current elapsed time
+ */
 function Stopwatch(){
     const [isRunning, setIsRunning] = useState(false);
     const [elapsedTime, setElapsedTime] = useState(0);
+    
+    const stopCount = useRef(0);
     const intervalIdRef = useRef(null);
     const startTimeRef = useRef(0);
 
+    const startRef = useRef(null);
+    const stopRef = useRef(null);
+    const resetRef = useRef(null);
+    
+    let [act, setAct] = useState("");
+    let [first, setFirst] = useState(""); 
+    let [second, setSecond] = useState(""); 
+    let [third, setThird] = useState(""); 
+    
     useEffect(() => {
         if(isRunning){
             intervalIdRef.current = setInterval(() => {
@@ -18,20 +34,52 @@ function Stopwatch(){
             clearInterval(intervalIdRef.current);
         }
     }, [isRunning]); //when it's running
-
+    
     function start(){
         setIsRunning(true);
         startTimeRef.current = Date.now() - elapsedTime;
-        
-        console.log(startTimeRef.current); //current date in milliseconds since epic time
     }
+
     function stop(){
-        setIsRunning(false);
+        if(isRunning) {
+            switch(stopCount.current){
+                case 0: //since React's initial rendering
+                    setFirst(formatTime());
+                    console.log(first);
+                    break;
+                case 1:
+                    setSecond(formatTime());
+                    break;
+                case 2:
+                    setThird(formatTime());
+                    setIsRunning(false);
+                    toggleClasses();
+                    break;
+            }
+            stopCount.current++;
+            console.log(stopCount);
+        }
     }
+
     function reset(){
+        if(stopRef.current.classList.contains("start-stop-hide")) {
+            stopCount.current = 0;
+            toggleClasses();
+            setAct("");
+            setFirst("");
+            setSecond("");
+            setThird("");
+        }
         setElapsedTime(0);
         setIsRunning(false);
     }
+
+    function toggleClasses(){
+        startRef.current.classList.toggle("start-stop-hide");
+        stopRef.current.classList.toggle("start-stop-hide");
+        resetRef.current.classList.toggle("reset-hint");
+    }
+
     function formatTime(){
         let hours = Math.floor(elapsedTime / (1000 * 60 * 60));
         let minutes = Math.floor(elapsedTime / (1000 * 60 ) % 60);
@@ -45,16 +93,19 @@ function Stopwatch(){
 
         return `${hours}:${minutes}:${seconds}:${milliseconds}`;
     }
+
     return(
         <>
-            <div className="stopwatch">
+            <div className="stopwatch-elements">
                 <div className="display">{formatTime()}</div>
                 <div className="controls">
-                    <button onClick={start} className="start-button">Start</button>
-                    <button onClick={stop} className="stop-button">Stop</button>
-                    <button onClick={reset} className="reset-button">Reset</button>
+                    <button onClick={start} className="start-button" ref={startRef}>Start</button>
+                    <button onClick={stop} className="stop-button" ref={stopRef}>Stop</button>
+                    <button onClick={reset} className="reset-button" ref={resetRef}>Reset</button>
                 </div>
             </div>
+            <ResultList firstPlace={first} secondPlace={second} thirdPlace={third}
+                        activity={act} activitySetter={setAct}/>
         </>
     );
 }

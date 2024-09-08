@@ -1,0 +1,12 @@
+.reset-hint {
+    animation-name: reset-glow;
+    animation-iteration-count: infinite;
+    animation-duration: 7s;
+    animation-timing-function: ease;
+}
+@keyframes reset-glow {
+    70%{box-shadow: 0px 0px 20px hsl(0, 100%, 50%);};
+}
+.start-stop-hide {
+    visibility: hidden;
+}
