@@ -30,7 +30,7 @@ function DigitalClock(){
         <>
             <div className="clock-container">
                 <div className="clock">
-                    <span>{formatTime()}</span>
+                    <span data-test="dig-clock">{formatTime()}</span>
                 </div>
             </div>
         </>

@@ -96,12 +96,12 @@ function Stopwatch(){
 
     return(
         <>
-            <div className="stopwatch-elements">
-                <div className="display">{formatTime()}</div>
+            <div className="stopwatch-elements" data-test="stopwatch-container">
+                <div className="display" data-test="elapsed">{formatTime()}</div>
                 <div className="controls">
-                    <button onClick={start} className="start-button" ref={startRef}>Start</button>
-                    <button onClick={stop} className="stop-button" ref={stopRef}>Stop</button>
-                    <button onClick={reset} className="reset-button" ref={resetRef}>Reset</button>
+                    <button onClick={start} className="start-button" ref={startRef} data-test="start">Start</button>
+                    <button onClick={stop} className="stop-button" ref={stopRef} data-test="stop">Stop</button>
+                    <button onClick={reset} className="reset-button" ref={resetRef} data-test="reset">Reset</button>
                 </div>
             </div>
             <ResultList firstPlace={first} secondPlace={second} thirdPlace={third}

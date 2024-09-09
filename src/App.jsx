@@ -1,5 +1,6 @@
 import DigitalClock from './DigitalClock.jsx';
 import Stopwatch from './Stopwatch.jsx';
+import ResultList from './ResultList.jsx';
 import React, {useEffect} from 'react';
 
 function App() {
@@ -11,19 +12,25 @@ function App() {
     }, []);
     return(
         <>  
-            <div className="digital-clock">
+            <div className="digital-clock" data-test="dig-clock">
                 <DigitalClock />
             </div>
-            <h1 className="greeting">Set activities for competitions</h1>
-            <div className="stopwatches"> {/*BEM structure for SASS*/}
-                <div className="stopwatches__1st">
-                    <Stopwatch /> {/*Stopwatch and its result list for the 1st activity*/}
+            <h1 className="greeting" data-test="header">Set activities for competitions</h1>
+            <div className="stopwatches" data-test="all-stopwatches"> {/*BEM structure for SASS*/}
+                <div className="stopwatches__1st" data-test="stop-1">
+                    <Stopwatch>
+                        <ResultList />
+                    </Stopwatch>
                 </div>
-                <div className="stopwatches__2nd">
-                    <Stopwatch /> {/*Stopwatch and its result list for the 2nd activity*/}
+                <div className="stopwatches__2nd" data-test="stop-2">
+                    <Stopwatch>
+                        <ResultList />
+                    </Stopwatch>
                 </div>
-                <div className="stopwatches__3rd">
-                    <Stopwatch /> {/*Stopwatch and its result list for the 3rd activity*/}
+                <div className="stopwatches__3rd" data-test="stop-3">
+                    <Stopwatch>
+                        <ResultList />
+                    </Stopwatch>
                 </div>
             </div>
         </>
