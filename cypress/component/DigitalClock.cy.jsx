@@ -1,12 +1,16 @@
 import DigitalClock from '../../src/DigitalClock.jsx';
-import '../../src/scss/style.css';
 
 describe('<DigitalClock />', () => {
-    it('mounts', () => {
-        cy.mount(<DigitalClock />)
+    //Styles were tested in E2E
+    beforeEach(() => {
+        cy.get('[data-test="dig-clock"]').should('not.exist') //before mounting
+        cy.mount(<DigitalClock />) //mounts
     })
-    it('', () => { //the better testing experience is within E2E "functionality.cy.jsx"
-        cy.mount(<DigitalClock />)
-        
+    it('fundamentals', () => {
+        cy.get('[data-test="dig-clock"]').should('exist')
+        cy.get('[data-test="dig-clock"]').should('be.visible')
+        cy.get('[data-test="dig-clock"]').should('not.have.class')
+        cy.get('[data-test="dig-clock"]').contains(/AM|PM/) //contains either "AM" or "PM"
+        cy.get('[data-test="dig-clock"]').contains(':')
     })
 })
