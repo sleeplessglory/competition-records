@@ -9,7 +9,7 @@ and then head to http://IPv4:PortNumber
 {
     "plugins": ["plugins/markdown"],
     "source": {
-        "include": ["src"],
+        "include": ["src", "tutorials"],
         "exclude": ["node_modules", "cypress"],
         "includePattern": ".+\\.js(doc|x)?$"
     },
@@ -18,15 +18,26 @@ and then head to http://IPv4:PortNumber
         "destination": "./documentation/developer"
     },
     "docdash": {
-	"sort": true,
 	"search": true,
 	"collapse": false
     }
 }
+
 Then make sure that JSDoc is installed: npm install -g jsdoc
 Choose any theme for your doc (docdash, minami, etc.) and install: npm install docdash --save-dev
-Set your "jsdoc.json" file accordingly (depending on the theme)
-Run: jsdoc -c jsdoc.json
+Set your "jsdoc.json" file accordingly (depending on the theme).
+I personally changed the styling of docdash since I don't like it. Headed to 
+node_modules/docdash/static/ and then in the "fonts" folder added my "circular-std-2.ttf" file
+and in the "styles" folder modified the jsdoc.css file (you can copy the whole styling from
+"my-jsdoc-styles-modification.txt" file and paste it over there since I already preCSSed it).
+You should first generate the documentation alongside with the tutorials (if you have). Tutorials
+may have their own "tutorials" folder in the root. Create "tutorial name.md" file(s) and
+write the tutorial. That name will be tagged within the code (usually in the beginning with author
+info): {@tutorial tutorial name} without the ".md" extension.
+Run: jsdoc -u ./tutorials/ -c jsdoc.json
+-u ./tutorials/ means that it generates any tutorial within the "tutorials" folder.
+-c jsdoc.json generates the rest of the documented code
+
 Keep in mind: @function tags has to be used in order to document inner functions of components too.
 For useState() hooks use @typedef {(variableType|function(variableType))}.
 

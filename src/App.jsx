@@ -8,8 +8,7 @@ import React, {useEffect} from 'react';
  * and to clone from the GitHub repository via: {@link https://github.com/sleeplessglory/competition-records}
  * @copyright sleeplessglory 2024
  * 
- * Check out {@tutorial launch} to find out how to launch the application.
- * Also check out {@tutorial test} to find out how to test the application with Cypress.
+ * {@tutorial RunTest}
  * 
  * @component
  * @function App

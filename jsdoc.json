@@ -1,7 +1,7 @@
 {
     "plugins": ["plugins/markdown"],
     "source": {
-        "include": ["src"],
+        "include": ["src", "tutorials"],
         "exclude": ["node_modules", "cypress"],
         "includePattern": ".+\\.js(doc|x)?$"
     },
@@ -10,7 +10,6 @@
         "destination": "./documentation/developer"
     },
     "docdash": {
-	"sort": true,
 	"search": true,
 	"collapse": false
     }
