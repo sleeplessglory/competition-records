@@ -5,7 +5,7 @@ describe('styling tests', () => {
     it('page loads', () => {
         cy.contains(/Set activities for competitions/i).should('be.visible')
     })
-    it.only('correct colours', () => {
+    it('correct colours', () => {
         /*Cypress uses RGB to compare. My colours are set in HSL format. 
         Can be converted or checked in the code. Let's use RGB as input for tests*/
         cy.get('body').should('have.css', 'background-color', 'rgb(24, 4, 98)')
