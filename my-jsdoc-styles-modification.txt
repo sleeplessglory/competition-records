@@ -355,7 +355,7 @@ footer {
 }
 
 .signature {
-    color: rgb(242, 245, 63);
+    color: rgb(161, 221, 255);
 }
 
 .details {
