@@ -2,14 +2,32 @@ import DigitalClock from './DigitalClock.jsx';
 import Stopwatch from './Stopwatch.jsx';
 import ResultList from './ResultList.jsx';
 import React, {useEffect} from 'react';
-
+/**
+ * @author sleeplessglory <sleeplessglory@outlook.com>
+ * @version 1.0.0 is available to run from GitHub Pages: {@link https://sleeplessglory.github.io/competition-records}
+ * and to clone from the GitHub repository via: {@link https://github.com/sleeplessglory/competition-records}
+ * @copyright sleeplessglory 2024
+ * 
+ * Check out {@tutorial launch} to find out how to launch the application.
+ * Also check out {@tutorial test} to find out how to test the application with Cypress.
+ * 
+ * @component
+ * @function App
+ * @returns {JSX.Element} All the components and headers of an application.
+ * @description Contains all the components, headers, etc. for this project.
+ */
 function App() {
-    useEffect(() => { //prevents from coincidental page reloads by warning users in a pop-up window
+    /**
+     * @description This React useEffect() hook prevents from coincidental page reloads by warning
+     * users in a pop-up window (runs only on mount). So, users don't lose their current results.
+     */
+    useEffect(() => {
         window.onbeforeunload = () => true;
         return () => {
           window.onbeforeunload = null;
         };
-    }, []);
+    }, []); //runs only on mount
+
     return(
         <>  
             <div className="digital-clock" data-test="dig-clock">

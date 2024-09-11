@@ -27,8 +27,10 @@ Then make sure that JSDoc is installed: npm install -g jsdoc
 Choose any theme for your doc (docdash, minami, etc.) and install: npm install docdash --save-dev
 Set your "jsdoc.json" file accordingly (depending on the theme)
 Run: jsdoc -c jsdoc.json
+Keep in mind: @function tags has to be used in order to document inner functions of components too.
+For useState() hooks use @typedef {(variableType|function(variableType))}.
 
 3. In order to test your app with Cypress follow:
 npm run dev (the server has to be up)
 "npm install cypress --save-dev" to install Cypress locally as a dev dependency
-"npx cypress open" to eXecute Cypress window
+"npx cypress open" to eXecute the Cypress window

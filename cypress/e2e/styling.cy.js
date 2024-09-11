@@ -101,12 +101,17 @@ describe('styling tests', () => {
         function animations() {
             //complex animations and visuals can be tested with cypress-plugin-snapshots
             cy.get('[data-test="start"').click()
-            cy.get('[data-test="stop"').dblclick().click()
-            cy.get('[data-test="reset"').should('have.css', 'animation-duration', '7s')
-                                           .and('have.css', 'animation-name', 'reset-glow')
+            cy.get('[data-test="stop"').should('have.css', 'animation-duration', '7s')
+                                           .and('have.css', 'animation-name', 'stop-reset-glow')
                                            .and('have.css', 'animation-iteration-count', 'infinite')
                                            .and('have.css', 'animation-timing-function', 'ease')
-            //let's at least test the property being applied (catching box-shadow glow values is challenging)                               
+            //let's at least test the property being applied (catching box-shadow glow values is challenging)
+                                           .and('have.css', 'box-shadow')
+            cy.get('[data-test="stop"').dblclick().click()
+            cy.get('[data-test="reset"').should('have.css', 'animation-duration', '7s')
+                                           .and('have.css', 'animation-name', 'stop-reset-glow')
+                                           .and('have.css', 'animation-iteration-count', 'infinite')
+                                           .and('have.css', 'animation-timing-function', 'ease')
                                            .and('have.css', 'box-shadow')
         }
     })
