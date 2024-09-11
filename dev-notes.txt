@@ -45,3 +45,15 @@ For useState() hooks use @typedef {(variableType|function(variableType))}.
 npm run dev (the server has to be up)
 "npm install cypress --save-dev" to install Cypress locally as a dev dependency
 "npx cypress open" to eXecute the Cypress window
+
+4. In order to deploy a React (with Vite) application follow these steps:
+Run: npm install gh-pages --save-dev
+In "package.json" file at the top of it add: 
+    "homepage": "https://sleeplessglory.github.io/repositoryName/"
+In the same file in "scripts" section add: 
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist"
+Now head to "vite.config.js" file and add above "plugins":
+    base: "/competition-records/",
+Push all your commits to the remote repository and then run: npm run deploy
+Wait a few minutes and check out your deployed application on github pages (settings -> pages)
