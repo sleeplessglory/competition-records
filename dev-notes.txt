@@ -57,3 +57,6 @@ Now head to "vite.config.js" file and add above "plugins":
     base: "/competition-records/",
 Push all your commits to the remote repository and then run: npm run deploy
 Wait a few minutes and check out your deployed application on github pages (settings -> pages)
+Note: If "gh-pages" branch was created and nothing is happening within (settings -> pages), then over 
+there and in "Source" choose "Deploy from a branch". Then choose "gh-pages" branch and save it.
+The process has to start now.
