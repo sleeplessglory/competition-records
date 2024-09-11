@@ -14,5 +14,14 @@ The layout for a mobile version changes and stores all the stopwatches in a sing
 ![image](https://github.com/user-attachments/assets/8d2e17e1-aaa3-4133-b498-4e3c9dc4d481)
 # Cypress tests
 ## E2E testing
+Here's a video of E2E tests with Cypress
 
+https://github.com/user-attachments/assets/91de7a8f-5d64-4a64-b913-a24e41cd30b6
 ## Component testing
+And a video of Component tests
+
+https://github.com/user-attachments/assets/b8d8f698-4cbc-4183-a2a4-e781423d9f51
+# Documentation
+## Developer documentation
+
+## User documentation
