@@ -3,17 +3,18 @@ import Stopwatch from './Stopwatch.jsx';
 import ResultList from './ResultList.jsx';
 import React, {useEffect} from 'react';
 /**
+ * {@tutorial RunTest}
+ */
+/**
  * @author sleeplessglory <sleeplessglory@outlook.com>
  * @version 1.0.0 is available to run from GitHub Pages: {@link https://sleeplessglory.github.io/competition-records}
  * and to clone from the GitHub repository via: {@link https://github.com/sleeplessglory/competition-records}
  * @copyright sleeplessglory 2024
  * 
- * {@tutorial RunTest}
- * 
  * @component
  * @function App
  * @returns {JSX.Element} All the components and headers of an application.
- * @description Contains all the components, headers, etc. for this project.
+ * @description Contains all the components, headers, etc. for this project. Check out the {@tutorial RunAndTest} tutorial for developers.
  */
 function App() {
     /**
